@@ -19,81 +19,81 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    stack<LN> hui;
+    stack<LN> stack;
     string cmd;
     while (cin >> cmd) {
         if (cmd == "+") {
-            LN a = hui.top();
-            hui.pop();
-            LN b = hui.top();
-            hui.pop();
-            hui.push(a + b);
+            LN a = stackt.top();
+            stack.pop();
+            LN b = stack.top();
+            stack.pop();
+            stack.push(a + b);
         }
         if (cmd == "-") {
-            LN a = hui.top();
-            hui.pop();
-            LN b = hui.top();
-            hui.pop();
-            hui.push(b - a);
+            LN a = stack.top();
+            stack.pop();
+            LN b = stack.top();
+            stack.pop();
+            stack.push(b - a);
         }
         if (cmd == "*") {
-            LN a = hui.top();
-            hui.pop();
-            LN b = hui.top();
-            hui.pop();
-            hui.push(a * b);
+            LN a = stack.top();
+            stack.pop();
+            LN b = stack.top();
+            stack.pop();
+            stack.push(a * b);
         }
         if (cmd == "+") {
-            LN a = hui.top();
-            hui.pop();
-            LN b = hui.top();
-            hui.pop();
-            hui.push(a + b);
+            LN a = stack.top();
+            stack.pop();
+            LN b = stack.top();
+            stack.pop();
+            stack.push(a + b);
         }
         if (cmd == ">") {
-            LN a = hui.top();
-            hui.pop();
-            LN b = hui.top();
-            hui.pop();
-            hui.push(a > b);
+            LN a = stack.top();
+            stack.pop();
+            LN b = stack.top();
+            stack.pop();
+            stack.push(a > b);
         }
         if (cmd == "<") {
-            LN a = hui.top();
-            hui.pop();
-            LN b = hui.top();
-            hui.pop();
-            hui.push(a < b);
+            LN a = stack.top();
+            stack.pop();
+            LN b = stack.top();
+            stack.pop();
+            stack.push(a < b);
         }
         if (cmd == ">=") {
-            LN a = hui.top();
-            hui.pop();
-            LN b = hui.top();
-            hui.pop();
-            hui.push(a >= b);
+            LN a = stack.top();
+            stack.pop();
+            LN b = stack.top();
+            stack.pop();
+            stack.push(a >= b);
         }
         if (cmd == "<=") {
-            LN a = hui.top();
-            hui.pop();
-            LN b = hui.top();
-            hui.pop();
-            hui.push(a <= b);
+            LN a = stack.top();
+            stack.pop();
+            LN b = stack.top();
+            stack.pop();
+            stack.push(a <= b);
         }
         if (cmd == "==") {
-            LN a = hui.top();
-            hui.pop();
-            LN b = hui.top();
-            hui.pop();
-            hui.push(a == b);
+            LN a = stack.top();
+            stack.pop();
+            LN b = stack.top();
+            stack.pop();
+            stack.push(a == b);
         }
         if (cmd == "!=") {
-            LN a = hui.top();
-            hui.pop();
-            LN b = hui.top();
-            hui.pop();
-            hui.push(a != b);
+            LN a = stack.top();
+            stack.pop();
+            LN b = stack.top();
+            stack.pop();
+            stack.push(a != b);
         }
 
-        hui.push(LN(cmd));
+        stack.push(LN(cmd));
     }
 
 
@@ -107,12 +107,12 @@ int main(int argc, char **argv) {
         return 1;
     }
 
-    while (!hui.empty()) {
-        cout << (hui.top().sign_ ? "" : "-");
-        for (int i = 0; i < hui.top().len_; i++) {
-            cout << hui.top().a_[i];
+    while (!stack.empty()) {
+        cout << (stack.top().sign_ ? "" : "-");
+        for (int i = 0; i < stack.top().len_; i++) {
+            cout << stack.top().a_[i];
         }
-        hui.pop();
+        stack.pop();
         cout << '\n';
     }
 
